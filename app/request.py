@@ -34,8 +34,8 @@ def process_results(news_list):
        
         return news_results
 
-def get_news(title):
-  get_news_details_url = base_url.format(title,api_key)
+def get_news(id):
+  get_news_details_url = base_url.format(id,api_key)
   with urllib.request.urlopen(get_news_details_url) as url:
     news_details_data = url.read()
     news_details_response = json.loads(news_details_data)
