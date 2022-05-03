@@ -5,54 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% extends 'base.html'%}
     {% import 'macros.html' as macro%}
 </head>
 <body>
-<h3> Business News</h3>
+      {% block content %}
+
+    <h4> Business News</h4>
          <ul>
             {{ macro.displayNewsList(business)}}
         </ul>
 
-        </ul>
-
-        <h3>Entertainment News</h3>
+        <h4>Entertainment News</h4>
         <ul>
            {{ macro.displayNewsList(entertainment)}}
         </ul>
 
-        <h3>General News</h3>
+        <h4>General News</h4>
         <ul>
          {{ macro.displayNewsList(general)}}
         </ul>
 
-        </ul>
-
-        <h3>Health News</h3>
+        <h4>Health News</h4>
         <ul>
          {{ macro.displayNewsList(health)}}
         </ul>
 
-        </ul>
-
-        <h3>Science News</h3>
+        <h4>Science News</h4>
         <ul>
           {{ macro.displayNewsList(science)}}
         </ul>
 
-        </ul>
-
-        <h3>Technology News</h3>
+        <h4>Technology News</h4>
         <ul>
           {{ macro.displayNewsList(technology)}}
         </ul>
 
-        </ul>
-
-        <h3>Sport News</h3>
+        <h4>Sport News</h4>
         <ul>
           {{ macro.displayNewsList(sport)}}
         </ul>
 
-        </ul>
+        {% endblock%}
 </body>
 </html>
