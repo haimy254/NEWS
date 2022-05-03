@@ -1,8 +1,8 @@
-from sre_constants import ANY
+
 from app import app
 import urllib.request,json
 from .model import news
-process_results = ANY
+
 News = news.News
 api_key= app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
@@ -18,5 +18,18 @@ def get_news(category):
         if get_news_response['results']:
            news_results_list = get_news_response['results']
            news_results = process_results(news_results_list)
+           
+def process_results(news_list):
+    news_results = []
+    for news_item in news_list:
+      title= news.item.get('original_title')
+      author = news.item.get('author')
+      description= news_item.get('description')
+      publishedAt=news.item.get('publishedAt')
+      image=news.items.get('image')
+      
+      if news:
+        news_object= news(title,author,description,publishedAt, image)
+        news_results.append(news_object)
        
         return news_results
