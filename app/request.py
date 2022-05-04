@@ -7,7 +7,7 @@ News = news.News
 api_key= app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 
-def get_news(category):
+def get_news1(category):
   get_news_url = base_url.format(category,api_key)
 
   with urllib.request.urlopen(get_news_url) as url:
@@ -34,7 +34,7 @@ def process_results(news_list):
        
         return news_results
 
-def get_news(id):
+def get_news2(id):
   get_news_details_url = base_url.format(id,api_key)
   with urllib.request.urlopen(get_news_details_url) as url:
     news_details_data = url.read()
