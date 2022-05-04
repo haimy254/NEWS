@@ -8,25 +8,43 @@
   </head>
   <body>
     {% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content
-    %} {% block content %}
-    <div class="container">
-      <!-- Poster background -->
-      <div class="row">
-        <div
-          class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath"
-          style="background: url({{news.image}}) no-repeat center center"
-        ></div>
+    %}
 
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
-          <h3>{{ news.title }}</h3>
-          <p class="author">{{ news.author}}</p>
-          <p class="description">{{ news.description}}</p>
-          <p class="publishedAt">
-            <b> {{ news.publishedAt}}</b> - <i>{{ news.image}} </i>
-          </p>
-        </div>
-      </div>
-    </div>
+    <h4>Business News</h4>
+    <ul>
+      {{ macro.displayNewsList(business)}}
+    </ul>
+
+    <h4>Entertainment News</h4>
+    <ul>
+      {{ macro.displayNewsList(entertainment)}}
+    </ul>
+
+    <h4>General News</h4>
+    <ul>
+      {{ macro.displayNewsList(general)}}
+    </ul>
+
+    <h4>Health News</h4>
+    <ul>
+      {{ macro.displayNewsList(health)}}
+    </ul>
+
+    <h4>Science News</h4>
+    <ul>
+      {{ macro.displayNewsList(science)}}
+    </ul>
+
+    <h4>Technology News</h4>
+    <ul>
+      {{ macro.displayNewsList(technology)}}
+    </ul>
+
+    <h4>Sport News</h4>
+    <ul>
+      {{ macro.displayNewsList(sport)}}
+    </ul>
+
     {% endblock%}
   </body>
 </html>
