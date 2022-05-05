@@ -1,7 +1,16 @@
-{% macro displayNewsList(news_list) %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% macro displayNewsList(news_list) %}
 
     {% for news in news_list %}
-       <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+       <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
             <img src="{{ news.poster }}" alt="{{ <i class="fa fa-newspaper-o" aria-hidden="true"></i>.title }} poster" class="img-responsive">
             <li class="text-center">
                 <a href="/news/{{news.id}}">
@@ -11,3 +20,5 @@
     {% endfor %}
 
 {% endmacro %}
+</body>
+</html>

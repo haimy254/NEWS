@@ -9,6 +9,17 @@
   <body>
     {% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content
     %}
+    <div class="container">
+      <form>
+        <input
+          type="text"
+          name="news_query"
+          placeholder="Search for a news"
+          class="form-control"
+        />
+        <input type="submit" value="Submit" class="btn btn-outline-success" />
+      </form>
+    </div>
 
     <h4>Business News</h4>
     <ul>
@@ -23,26 +34,6 @@
     <h4>General News</h4>
     <ul>
       {{ macro.displayNewsList(general)}}
-    </ul>
-
-    <h4>Health News</h4>
-    <ul>
-      {{ macro.displayNewsList(health)}}
-    </ul>
-
-    <h4>Science News</h4>
-    <ul>
-      {{ macro.displayNewsList(science)}}
-    </ul>
-
-    <h4>Technology News</h4>
-    <ul>
-      {{ macro.displayNewsList(technology)}}
-    </ul>
-
-    <h4>Sport News</h4>
-    <ul>
-      {{ macro.displayNewsList(sport)}}
     </ul>
 
     {% endblock%}
