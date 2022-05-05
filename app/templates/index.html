@@ -10,32 +10,33 @@
     {% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content
     %}
     <div class="container">
-      <form>
-        <input
-          type="text"
-          name="news_query"
-          placeholder="Search for a news"
-          class="form-control"
-        />
-        <input type="submit" value="Submit" class="btn btn-outline-success" />
-      </form>
+      <div class="text-light bg-dark">
+        <form>
+          <input
+            type="text"
+            name="news_query"
+            placeholder="Search for a news"
+            class="form-control"
+          />
+          <input type="submit" value="Submit" class="btn btn-outline-success" />
+        </form>
+
+        <h4>Business News</h4>
+        <ul>
+          {{ macro.displayNewsList(business)}}
+        </ul>
+
+        <h4>Entertainment News</h4>
+        <ul>
+          {{ macro.displayNewsList(entertainment)}}
+        </ul>
+
+        <h4>General News</h4>
+        <ul>
+          {{ macro.displayNewsList(general)}}
+        </ul>
+      </div>
     </div>
-
-    <h4>Business News</h4>
-    <ul>
-      {{ macro.displayNewsList(business)}}
-    </ul>
-
-    <h4>Entertainment News</h4>
-    <ul>
-      {{ macro.displayNewsList(entertainment)}}
-    </ul>
-
-    <h4>General News</h4>
-    <ul>
-      {{ macro.displayNewsList(general)}}
-    </ul>
-
     {% endblock%}
   </body>
 </html>

@@ -6,7 +6,7 @@ class News:
     def __init__(self,title,author,image,description,publishedAt):
         self.title = title
         self.author = author
-        self.image = "https://image.tmdb.org/t/p/w500/" + image
+        self.image = "https://s.yimg.com/os/creatr-uploaded-images/2021-12/b4c77e50-5e45-11ec-97eb-d4c0e86e5f90" + image
         self.description = description
         self.publishedAt = publishedAt
 
