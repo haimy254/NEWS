@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    {% macro displayNewsList(news_list) %} {% for news in news_list %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
-      <img src="{{ news.poster }}" alt="{{
-      <i class="fa fa-newspaper-o" aria-hidden="true"></i>.title }} poster"
-      class="img-responsive">
-      <li class="text-center">
-        <a href="/news/{{news.id}}"> {{ news.title|truncate(10)}}</a>
-      </li>
-    </div>
-    {% endfor %} {% macro displayReviews(review_list) %} {% for review in
-    review_list %}
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-      <h2>{{ review.title}}</h2>
-      <p>{{ review.review | truncate(30) }}</p>
-    </div>
-    {% endfor %} {% endmacro %}
-  </body>
-</html>
+<div class="card" style="width:5rem">
+  {% macro displayNewsList(news_list) %} {% for news in news_list %}
+<div class="row text-light bg-dark">
+    <img class="card-img-top"src="{{ news.url_To_image }}" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">NEWS</h5>
+    <p class="card-text">TITLE:{{ news.title}}</p>
+    <p class="card-text">AUTHOR:{{news.author}}</p>
+    <p class="card-text">DESCRIPTION:{{news.description}}</p>
+    <p class="card-text">PUBLISHEDAT:{{news.publishedAt}}</p>
+    <p class="card-text">URL:<a href="/">{{news.url}}</a></p>
+   
+  </div>
+</div>
+    
+  </div>
+  {% endfor %} {% endmacro %} {% macro displayReviews(review_list) %} {% for
+  review in review_list %}
+  <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 review-card">
+    <h2>{{ review.title}}</h2>
+    <p>{{ review.review | truncate(30) }}</p>
+  </div>
+
+  {% endfor %} {% endmacro %}
+</div>

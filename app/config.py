@@ -1,7 +1,7 @@
 import os
 class Config:
-    NEWS_API_BASE_URL='https://newsapi.org/v2/everything?q=Apple&from=2022-05-03&sortBy=popularity&apiKey=API_KEY'
-    NEWS_API_KEY=os.environ.get('25a14688847949f39f86a855aa918ad8')
+    NEWS_API_BASE_URL='https://newsapi.org/v2/{}&apiKey={}'
+    NEWS_API_KEY=os.environ.get('NEWS_API_KEY')
 class ProdConfig(Config):
     pass
 

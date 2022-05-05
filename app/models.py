@@ -3,15 +3,18 @@ class News:
     News class to define Movie Objects
     '''
 
-    def __init__(self,title,author,image,description,publishedAt):
+    def __init__(self,title,author,description,publishedAt,urlToImage, url):
         self.title = title
         self.author = author
-        self.image = "https://s.yimg.com/os/creatr-uploaded-images/2021-12/b4c77e50-5e45-11ec-97eb-d4c0e86e5f90" + image
         self.description = description
         self.publishedAt = publishedAt
-
-
-
+        self.url_To_image= urlToImage
+        self.url= url
+class Source:
+     def __init__(self,id,name):
+        self.id = id
+        self.name = name
+        
 class Review:
 
     all_reviews = []
