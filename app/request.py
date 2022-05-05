@@ -51,8 +51,8 @@ def get_news(id):
       news_object = News(title,author, description,publishedAt,image)
       
 
-def search_news(news_title):
-  search_news_url ='https://newsapi.org/v2/everything?q=Apple&from=2022-05-03&sortBy=popularity&apiKey=API_KEY'.format (api_key, news_title)
+def search_news(news_name):
+  search_news_url ='https://newsapi.org/v2/everything?q=Apple&from=2022-05-03&sortBy=popularity&apiKey=API_KEY'.format (api_key, news_name)
   with urllib.request.urlopen(search_news_url) as url:
    search_news_data = url.read()
   search_news_response = json.loads(search_news_data)
