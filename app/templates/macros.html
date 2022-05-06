@@ -1,14 +1,14 @@
-<div class="card" style="width:5rem">
-  {% macro displayNewsList(news_list) %} {% for news in news_list %}
-<div class="row text-light bg-dark">
-    <img class="card-img-top"src="{{ news.url_To_image }}" alt="Card image cap" />
+{% macro displayNewsList(news_list) %} {% for news in news_list %}
+<div class="col-lg-4">
+  <div class="card" >
+    <img class="card-img-top"src="{{ news.url_To_image }}"  height="200px" alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">NEWS</h5>
     <p class="card-text">TITLE:{{ news.title}}</p>
     <p class="card-text">AUTHOR:{{news.author}}</p>
     <p class="card-text">DESCRIPTION:{{news.description}}</p>
     <p class="card-text">PUBLISHEDAT:{{news.publishedAt}}</p>
-    <p class="card-text">URL:<a href="/">{{news.url}}</a></p>
+    <p class="card-text">URL:<a href="{{news.url}}" class="btn btn-info">read article</a></p>
    
   </div>
 </div>
